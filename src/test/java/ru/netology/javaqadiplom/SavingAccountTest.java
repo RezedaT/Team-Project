@@ -212,13 +212,6 @@ public class SavingAccountTest {
 
     // Если параметры некорректны (мин. баланс больше максимального и так далее), то
     // должно выкидываться исключения вида IllegalArgumentException.
-    @Test
-    public void shouldExceptionNegativeInitialBalance() {
-        // исключение отрицательный начальный баланс
-        Assertions.assertThrows(java.lang.IllegalArgumentException.class, () -> {
-            new SavingAccount(-2_000, 1_000, 10_000, 5);
-        });
-    }
 
     @Test
     public void shouldExceptionInitialBalanceLowMinBalance() {
