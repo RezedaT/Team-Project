@@ -32,6 +32,10 @@ public class CreditAccount extends Account {
                     "Кредитный лимит не может быть отрицательным, а у вас: " + creditLimit
             );
         }
+        this.balance = initialBalance;
+        this.creditLimit = creditLimit;
+        this.rate = rate;
+    }
 
     /**
      * Операция оплаты с карты на указанную сумму.
