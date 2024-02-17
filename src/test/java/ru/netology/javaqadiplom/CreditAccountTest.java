@@ -98,4 +98,14 @@ public class CreditAccountTest {
         CreditAccount account = new CreditAccount(1000, 1000, 10);
         Assertions.assertEquals(1000, account.getCreditLimit());
     }
+
+    @Test
+    public void shouldAddToPositiveBalance() {
+        //Проверяем, что к начальному балансу, прибавляется сумма
+        CreditAccount account = new CreditAccount(1000, 5_000, 15);
+
+        account.add(3_000);
+
+        Assertions.assertEquals(4_000, account.getBalance());
+    }
 }
