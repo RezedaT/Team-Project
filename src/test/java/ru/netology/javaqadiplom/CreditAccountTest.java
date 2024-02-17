@@ -91,6 +91,13 @@ public class CreditAccountTest {
         account.pay(1500);
         Assertions.assertEquals(-50, account.yearChange());
     }
+        @Test
+    void shouldCalculateYearChangeWhenBalanceLess100() {
+        // Проверяем, что метод `yearChange` правильно высчитывает годовой процент, когда баланс меньше 100
+        CreditAccount account = new CreditAccount(1000, 1000, 10);
+        account.pay(1099);
+        Assertions.assertEquals((1000 - 1099) * 10 /100, account.yearChange());
+    }
 
     @Test
     void shouldGetCreditLimit() {
