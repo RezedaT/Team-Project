@@ -89,7 +89,7 @@ public class CreditAccountTest {
         // Проверяем, что метод `yearChange` правильно высчитывает годовой процент, когда баланс отрицательный
         CreditAccount account = new CreditAccount(1000, 1000, 10);
         account.pay(1500);
-        Assertions.assertEquals(50, account.yearChange());
+        Assertions.assertEquals(-50, account.yearChange());
     }
 
     @Test
