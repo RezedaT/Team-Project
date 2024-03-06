@@ -161,7 +161,7 @@ public class SavingAccountTest {
     }
 
     @Test
-    public void shouldYearChangeBalanceLess100() { //  процент на сотаток меньше 100
+    public void shouldYearChangeBalanceLess100() { //  процент на остаток меньше 100
         SavingAccount account = new SavingAccount(
                 99,
                 50,
@@ -216,25 +216,19 @@ public class SavingAccountTest {
     @Test
     public void shouldExceptionInitialBalanceLowMinBalance() {
         // исключение начальный баланс меньше мин
-        Assertions.assertThrows(java.lang.IllegalArgumentException.class, () -> {
-            new SavingAccount(500, 1_000, 10_000, 5);
-        });
+        Assertions.assertThrows(java.lang.IllegalArgumentException.class, () -> new SavingAccount(500, 1_000, 10_000, 5));
     }
 
     @Test
     public void shouldExceptionInitialBalanceMoreThanMaxBalance() {
         // исключение начальный баланс больше макс
-        Assertions.assertThrows(java.lang.IllegalArgumentException.class, () -> {
-            new SavingAccount(15_000, 1_000, 10_000, 5);
-        });
+        Assertions.assertThrows(java.lang.IllegalArgumentException.class, () -> new SavingAccount(15_000, 1_000, 10_000, 5));
     }
 
     @Test
     public void shouldExceptionMinBalanceMoreThanMaxBalance() {
         // исключение мин баланс больше макс баланс
-        Assertions.assertThrows(java.lang.IllegalArgumentException.class, () -> {
-            new SavingAccount(2_000, 15_000, 10_000, 5);
-        });
+        Assertions.assertThrows(java.lang.IllegalArgumentException.class, () -> new SavingAccount(2_000, 15_000, 10_000, 5));
     }
     @Test
     public void shouldPayTrue() { // оплата в пределах мин
@@ -346,5 +340,4 @@ public class SavingAccountTest {
         Assertions.assertEquals(expected, actual);
     }
 }
-
 
